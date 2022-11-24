@@ -23,6 +23,13 @@ public class rangeSum04 {
 				A[row][column] = Integer.parseInt(st.nextToken());
 			}
 		}
+		
+		for(int row =1; row < N+1; row++) {
+			for(int column=1; column < N+1; column++) {
+				S[row][column] = S[row-1][column] + S[row][column-1] - S[row-1][column-1] + A[row][column];
+			}
+		}
+		
 
 	}
 
