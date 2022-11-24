@@ -29,8 +29,16 @@ public class rangeSum04 {
 				S[row][column] = S[row-1][column] + S[row][column-1] - S[row-1][column-1] + A[row][column];
 			}
 		}
-		
-
+		for(int i =0; i < M; i++) {
+			st = new StringTokenizer(br.readLine());
+			
+			int x1 = Integer.parseInt(st.nextToken());
+			int y1 = Integer.parseInt(st.nextToken());
+			int x2 = Integer.parseInt(st.nextToken());
+			int y2 = Integer.parseInt(st.nextToken());
+			
+			System.out.println(S[x2][y2] - S[x1-1][y2] - S[x2][y1-1] + S[x1-1][y1-1]);
+		}
 	}
 
 }
