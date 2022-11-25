@@ -12,7 +12,7 @@ public class remainderSum05 {
 		ArrayList<Integer> sumArr = new ArrayList<>();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		
+		int answer = 0;
 		a.add(0);
 		sumArr.add(0);
 		
@@ -28,7 +28,18 @@ public class remainderSum05 {
 			int temp = sumArr.get(i-1) +a.get(i);
 			sumArr.add(temp);
 		}
-
+		
+		for(int i = 1; i< N+1; i++) {
+			for(int j = 1; j < sumArr.size(); j++) {
+		    	if(sumArr.get(j) % M ==0) answer++;
+			}
+		    int removeValue = sumArr.remove(1); 
+		    for(int j = 1 ; j < sumArr.size(); j++) {
+		    	int before = sumArr.get(j);
+		    	int after = before - removeValue;
+		    	sumArr.set(j, after);
+		    }
+		}
+		System.out.println(answer);
 	}
-
 }
