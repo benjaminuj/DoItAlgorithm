@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class jumongsCommand07 {
 
@@ -16,7 +17,23 @@ public class jumongsCommand07 {
 		for(int i =0; i<N; i++) {
 			A[i] = Integer.parseInt(st.nextToken());
 		}
-	
+		
+		Arrays.sort(A);
+		
+		int answer = 0;
+		int start = 0;
+		int end = N-1;
+		
+		while(start<end) {
+			if(A[start] + A[end] == M) {
+		    	answer++;
+		        start++;
+		        end--;
+		    }
+		    else if(A[start] + A[end] > M) end--;
+		    else start++;
+		}
+		System.out.println(answer);
 	}
 
 }
