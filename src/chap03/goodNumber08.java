@@ -80,7 +80,6 @@ public class goodNumber08 {
 		int N = Integer.parseInt(bf.readLine());
 		long[] A = new long[N];
 		
-		bf = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(bf.readLine());
 		
 		for(int i=0; i<N; i++) {
