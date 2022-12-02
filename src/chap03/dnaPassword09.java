@@ -26,10 +26,22 @@ public class dnaPassword09 {
 
 		for(int i=0; i<p; i++) {
 			int ascii = dna.charAt(i);
-			int index = ascii - 65;
-			alpha[index]++; 
+			int alphabet = ascii - 65;
+			alpha[alphabet]++; 
 		}
-	
+		int index = -1;
+		while(p+index < dna.length()) {
+		  index++;
+		  if(alpha[0] >= checkCnt[0] && alpha[2] >= checkCnt[1] && alpha[6] >= checkCnt[2] && alpha[19] >= checkCnt[3]) {
+		      answer++;
+		  }
+		  int start = dna.charAt(index) -65;
+		  alpha[start]--;
+		  if(p+index < dna.length()) {
+			  int end = dna.charAt(p+index) -65;
+			  alpha[end]++;
+		  }
+		}
+		System.out.println(answer);
 	}
-
 }
