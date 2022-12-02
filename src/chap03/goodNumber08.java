@@ -21,7 +21,7 @@
 //		              answer++;
 //		              break;
 //					} else if(start == i) start ++;
-//					else if(end ==i) i--;
+//					else if(end ==i) end--;
 //		        }
 //			}
 //		}
@@ -57,7 +57,10 @@ public class goodNumber08 {
 			int start = 0;
 			int end = N-1;
 			while(start < end) {
-				if(A[start] + A[end] == A[i]) {
+				long sum = A[start] + A[end];
+				if(sum > A[i]) end--;
+				else if(sum < A[i]) start++;
+				else if(sum == A[i]) {
 					if(start != i && end != i) {
 						answer++;
 						break;
@@ -66,8 +69,7 @@ public class goodNumber08 {
 					}else if(end == i) {
 						end--;
 					}
-				} else if(A[start] + A[end] > A[i]) end--;
-				else start++;
+				} 
 			}
 		}
 		return answer;
@@ -84,6 +86,7 @@ public class goodNumber08 {
 		for(int i=0; i<N; i++) {
 			A[i] = Long.parseLong(st.nextToken());
 		}
+		bf.close();
 		Arrays.sort(A);
 		System.out.println(solution(A,N));
 	}
