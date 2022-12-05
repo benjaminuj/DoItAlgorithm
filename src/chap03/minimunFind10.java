@@ -3,6 +3,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.io.IOException;
+import java.util.Deque;
+import java.util.LinkedList;
 
 public class minimunFind10 {
 
@@ -19,9 +21,19 @@ public class minimunFind10 {
 			A[i] = Integer.parseInt(st.nextToken());
 		}
 		
-		for(int i =0 ; i<N; i++) {
-			System.out.println(A[i]);
-		}
+		Deque<Node> checkDeque = new LinkedList<>();
 		
+	
+		
+	}
+	
+	static class Node {
+		public int value;
+		public int index;
+		
+		Node(int value, int index) {
+			this.value = value;
+			this.index = index;
+		}
 	}
 }
