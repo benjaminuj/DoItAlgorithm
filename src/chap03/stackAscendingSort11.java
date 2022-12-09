@@ -2,14 +2,13 @@ package chap03;
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.ArrayList;
-
 public class stackAscendingSort11 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		int[] arr = new int[n];
-		ArrayList<String> arrList = new ArrayList<>();
 		Stack<Integer> stack = new Stack<>();
+		StringBuffer bf = new StringBuffer();
 		for(int i =0; i<n; i++) {
 			arr[i] = sc.nextInt();
 		}
