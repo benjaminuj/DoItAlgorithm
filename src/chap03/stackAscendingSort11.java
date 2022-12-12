@@ -17,10 +17,10 @@ public class stackAscendingSort11 {
 		while(index < n) {
 			if(arr[index] >= now) {
 		    	stack.push(now);
-		    	arrList.add("+");
+		    	bf.append("+\n");
 		        if(arr[index] == now) {
 		        	stack.pop();
-		        	arrList.add("-");
+		        	bf.append("-\n");
 		        	index++;
 		        }
 		    	now++;
@@ -29,7 +29,7 @@ public class stackAscendingSort11 {
 				if(arr[index] < now) {
 			    	if(stack.peek() == arr[index]) {
 			    		stack.pop();
-			    		arrList.add("-");
+			    		bf.append("-\n");
 			    		index++;
 			    	}
 			        else {
