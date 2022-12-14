@@ -3,8 +3,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.io.IOException;
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Queue;
@@ -16,7 +14,6 @@ static ArrayList<Integer>[] A;
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		int N = Integer.parseInt(st.nextToken());
@@ -41,16 +38,13 @@ static ArrayList<Integer>[] A;
 		
 		DFS(V);
 		System.out.println();
-		for(int i=1; i<N+1; i++) {
-			visited[i] = false;
-		}
+		visited = new boolean[N+1];
 		BFS(V);
 		System.out.println();
 	}
 	
 	public static void DFS(int V) {
 		System.out.print(V + " ");
-		if(visited[V]) return;
 		visited[V] = true;
 		for(int i : A[V]) {
 			if(!visited[i]) {
@@ -60,14 +54,13 @@ static ArrayList<Integer>[] A;
 	}
 	public static void BFS(int V) {
 		Queue<Integer> queue = new LinkedList<Integer>();
-		if(visited[V]) return;
 		queue.add(V);
 		visited[V] = true;
 		
 		while(!queue.isEmpty()) {
 			int now = queue.poll();
 			System.out.print(now + " ");
-			for(int i : A[V]) {
+			for(int i : A[now]) {
 				if(!visited[i]) {
 					queue.add(i);
 					visited[i] = true;
