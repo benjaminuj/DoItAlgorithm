@@ -3,7 +3,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -30,16 +29,15 @@ static int N,M;
 		BFS(0,0);
 		System.out.println(A[N-1][M-1]);
 	}
-	
 	public static void BFS(int i, int j) {
 		Queue<int[]> queue = new LinkedList<>();
 		queue.offer(new int[] {i,j});
 		visited[i][j] = true;
 		while(!queue.isEmpty()) {
-			int[] now = queue.poll();
+			int[] now = queue.poll(); 
 			for(int k=0; k<4; k++) {
 				int y = now[0] + dy[k];
-				int x = now[0] +  dx[k];
+				int x = now[1] +  dx[k];
 				if(0 <= x && x < N && 0 <= y && y < M) {
 					if(!visited[x][y] && A[x][y] == 1) {
 						visited[i][j] = true;
