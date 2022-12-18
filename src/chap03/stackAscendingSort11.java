@@ -39,9 +39,9 @@ public class stackAscendingSort11 {
 			    }
 			}	
 		}
-		for(int i=0; i<arrList.size(); i++) {
-			System.out.println(arrList.get(i));
-		}
+//		for(int i=0; i<arrList.size(); i++) {
+//			System.out.println(arrList.get(i));
+//		}
 		return;
 	}
 }

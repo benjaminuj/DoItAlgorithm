@@ -11,16 +11,18 @@ static int N;
 		DFS(5,1);
 		DFS(7,1);
 	}
-	public static void DFS(int number, int N) {
+	public static void DFS(int number, int digit) {
 		if(digit== N) {
-			System.out.println(number);
+			if(checkPrimeNumber(number)) {
+				System.out.println(number);
+			}
 			return;
 		}
-		digit++;
 		for(int i = 1; i<10; i = i+2) {
 			number = number*10 + i;
-			if(!checkPrimeNumber(number)) return;
-			DFS(number, N);
+			if(checkPrimeNumber(number)) {
+				DFS(number, digit+1);
+			}
 		}
 	}
 	
@@ -29,7 +31,7 @@ static int N;
 		for(int j=2; j<=number/2; j++) {
 			if(number%j == 0) {
 				isPrime = false;
-				break;
+
 			}
 		}
 		return isPrime;
