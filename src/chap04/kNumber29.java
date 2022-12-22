@@ -32,7 +32,7 @@ static int index = 0;
 			if(A[S] > A[E]) {
 				swap(A,S,E);
 			}
-			return E;
+			return E; 
 		}
 		int M = (S+E) /2;
 		swap(A,S,M);
@@ -43,7 +43,7 @@ static int index = 0;
 			while(pivot > A[l] && l<A.length-1) l++;
 			if(l <= r) swap(A,l++,r--);
 		}
-		A[S] = A[r];
+		A[S] = A[r]; 
 		A[r] = pivot;
 		return r;
 		
