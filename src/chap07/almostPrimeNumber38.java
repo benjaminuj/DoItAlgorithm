@@ -13,18 +13,13 @@ static long A, B;
 			number[i]= i;
 		}
 		primeNumber(number);
-//		for(int i = (int) Math.ceil(Math.sqrt(A)); i<= Math.sqrt(B); i++) {
-//			if(i == 1) continue;
-//			if(number[i]==0) count++;
-//		}
 		for(int i=2; i <= Math.sqrt(B); i++) {
 			for(int square=2; square<=Math.log(B)/Math.log(i); square++) {
-				if(number[i] == 0) {
+				if(number[i] != 0) {
 					long num = (long)Math.pow(i,square);
 					if(num >= A && num <= B) count++;
 				}
 			}
-			
 		}
 		System.out.println(count);
 	}
