@@ -22,11 +22,6 @@ static long gcd;
 		bw.close();
 	}
 	public static void euclid(long aLength,long bLength) {
-		if(aLength<bLength) {
-			long temp = aLength;
-			aLength = bLength;
-			bLength = temp;
-	    }
 	    long result = aLength%bLength;
 	    if(result == 0) gcd = bLength;
 	    else euclid(bLength,result);
